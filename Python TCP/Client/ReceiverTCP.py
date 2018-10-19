@@ -1,6 +1,7 @@
 import socket
+import time
 
-TCP_IP = "127.0.0.1"
+TCP_IP = "192.168.1.102"
 FILE_PORT = 5005
 DATA_PORT = 5006
 timeout = 3
@@ -18,6 +19,7 @@ sock_d.listen(1)
 
 while True:
     conn, addr = sock_f.accept()
+    t0 = time.time()
     data = conn.recv(buf)
     if data:
         print("File name:", data)
@@ -34,3 +36,6 @@ while True:
 
     print("%s Finish!" % file_name)
     f.close()
+    total = time.time() - t0
+    with open("ReceiverResults.txt", "a") as myfile:
+        myfile.write(str(file_name) +":"+str(total)+"\n")
