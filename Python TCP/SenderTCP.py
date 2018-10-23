@@ -37,8 +37,8 @@ class TCP:
             with open("SenderResults.txt", "a") as myfile:
               myfile.write(file_name +":"+str(total)+"\n")
 
-sender = TCP(TCP_IP, FILE_PORT, DATA_PORT)
-"""sender.sendTCP("1MB.txt")
+sender = TCP(TCP_IP, FILE_PORT, DATA_PORT) 
+sender.sendTCP("1MB.txt")
 sender.sendTCP("2MB.txt")
 sender.sendTCP("4MB.txt")
 sender.sendTCP("8MB.txt")
@@ -46,6 +46,6 @@ sender.sendTCP("16MB.txt")
 sender.sendTCP("32MB.txt")
 sender.sendTCP("64MB.txt")
 sender.sendTCP("128MB.txt")
-sender.sendTCP("256MB.txt")"""
+sender.sendTCP("256MB.txt")
 sender.sendTCP("512MB.txt")
-#sender.sendTCP("1GB.txt")
+sender.sendTCP("1GB.txt")

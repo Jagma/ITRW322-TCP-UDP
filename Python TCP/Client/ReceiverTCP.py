@@ -1,7 +1,7 @@
 import socket
 import time
 
-TCP_IP = "127.0.0.1"
+TCP_IP = "192.168.1.102"
 FILE_PORT = 5005
 DATA_PORT = 5006
 timeout = 3

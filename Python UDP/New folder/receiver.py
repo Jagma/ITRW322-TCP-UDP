@@ -2,7 +2,7 @@ import socket
 import select
 import time
 
-UDP_IP = "127.0.0.1"
+UDP_IP = "192.168.1.102"
 IN_PORT = 50000
 timeout = 3
 
