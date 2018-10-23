@@ -1,5 +1,6 @@
 import socket
 import select
+import time
 
 UDP_IP = "127.0.0.1"
 IN_PORT = 50000
@@ -16,7 +17,7 @@ while True:
         file_name = data.strip()
 
     f = open(file_name, 'wb')
-
+    t0 = time.time()
     while True:
         ready = select.select([sock], [], [], timeout)
         if ready[0]:
@@ -25,4 +26,7 @@ while True:
         else:
             print("%s Finish!" % file_name)
             f.close()
+            total = time.time() - t0
+            with open("UDPReceiverResults.txt", "a") as myfile:
+                myfile.write(str(file_name) +":"+str(total)+"\n")
             break
